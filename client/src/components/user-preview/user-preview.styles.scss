@@ -1,0 +1,133 @@
+.user-preview {
+  width: 80vw;
+  display: flex;
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.3);
+
+  &__sidebar {
+    flex: 1;
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+    padding: 3rem 0;
+  }
+
+  &__content {
+    flex: 2.5;
+    background-color: #fff;
+    padding: 4rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--partition {
+      height: 2px;
+      width: 100%;
+      background-color: #eee;
+      margin-bottom: 8rem;
+    }
+  }
+}
+
+.side-nav {
+  margin-top: 3rem;
+
+  &__item {
+    position: relative;
+    list-style: none;
+    padding: 2rem 3rem 2rem 2rem;
+    transition: all 0.4s;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #eb2f64;
+    transform: scaleY(0);
+
+    transition: all 0.4s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 5px;
+  }
+
+  &__item:active::before {
+    background-color: #ff3366;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #f4f2f2;
+
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 2rem;
+    fill: #f4f2f2;
+  }
+
+  &__text {
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-left: 2.5rem;
+    color: #eee;
+  }
+}
+
+.account-details {
+  width: 70%;
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__form {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  &__button {
+    margin-top: 2.4rem;
+    background-color: #55c57a;
+    color: #f7f7f7;
+  }
+
+  &__photo-container {
+    display: flex;
+    align-items: center;
+
+    &--photo {
+      margin-right: 2rem;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 2000px;
+      object-fit: cover;
+    }
+  }
+}

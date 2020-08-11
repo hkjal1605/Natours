@@ -1,0 +1,77 @@
+.navigation {
+  width: 100%;
+  height: 8rem;
+  background-color: #333;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-family: "Lato", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.8px;
+    color: #fff;
+    padding: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+  }
+
+  &__logo {
+    height: 4rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    &--text {
+      padding: 0 2rem;
+      cursor: pointer;
+    }
+
+    &--details {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.signup-link {
+  padding: 1.2rem 1.8rem;
+  border: 1px solid white;
+  border-radius: 200px;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #fff;
+    color: #333;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.user-photo {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 200px;
+}
+
+.user-name {
+  padding-left: 0.5rem;
+}

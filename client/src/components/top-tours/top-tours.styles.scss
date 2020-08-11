@@ -1,0 +1,41 @@
+.top-tours {
+  background-color: #eee;
+  padding: 15rem 8rem;
+  padding-top: 28rem;
+  text-align: center;
+  margin-top: -10rem;
+
+  &__heading {
+    margin: 0 auto;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__tour-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.btn_viewAll {
+  margin-top: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.8px;
+  background-color: #55c57a;
+  color: #fff;
+  text-transform: uppercase;
+}

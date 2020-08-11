@@ -1,0 +1,43 @@
+.footer {
+  background-color: #333;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    margin-bottom: 5rem;
+  }
+
+  &__content {
+    width: 60%;
+    border-top: 3px solid #f7f7f7;
+    text-align: center;
+
+    &--text {
+      font-family: "Lato", sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.6px;
+      font-weight: 300;
+      color: #f7f7f7;
+      padding: 2rem;
+    }
+
+    &--contact {
+      font-family: "Lato", sans-serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: #55c57a;
+    }
+  }
+}
+
+.github-link {
+  color: #55c57a;
+  padding: 0 0.6rem;
+}

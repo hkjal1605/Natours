@@ -1,0 +1,7 @@
+const tourActionTypes = {
+  FETCH_TOUR_START: "FETCH_TOUR_START",
+  FETCH_TOUR_SUCCESS: "FETCH_TOUR_SUCCESS",
+  FETCH_TOUR_FAILURE: "FETCH_TOUR_FAILURE",
+};
+
+export default tourActionTypes;

@@ -1,0 +1,43 @@
+.form-group {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__label {
+    font-size: 2rem;
+    font-family: "Lato", sans-serif;
+    color: #333;
+    padding: 0.5rem;
+    align-self: flex-start;
+  }
+
+  &__input {
+    width: 100%;
+    align-self: flex-start;
+    font-size: 1.8rem;
+    font-family: "Lato", sans-serif;
+    color: #333;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.4rem;
+    border-radius: 5px;
+    background-color: rgba(#eee, 0.8);
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-top: 0.5rem;
+
+    transition: all 0.5s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+      border-bottom: 3px solid #833471;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #6f1e51;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.mapboxgl-marker {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 20rem;
+}
+
+.mapboxgl-popup-content {
+  background-color: #55c57a;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #f7f7f7;
+  font-size: 1.2rem;
+}

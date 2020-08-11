@@ -1,0 +1,26 @@
+.button {
+  padding: 1.5rem 3rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  border-radius: 2000px;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+  }
+}
