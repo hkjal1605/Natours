@@ -44,7 +44,7 @@ app.use(xss());
 app.use(compression());
 
 // Serving static files
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
@@ -52,7 +52,7 @@ app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/booking", bookingRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "./client/build/index.html"));
+  res.sendFile(path.join(__dirname + "client/build/index.html"));
 });
 
 app.use(globalErrorHandler);
