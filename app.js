@@ -44,7 +44,7 @@ app.use(xss());
 app.use(compression());
 
 // Serving static files
-app.use(express.static(`${__dirname}/client/public`));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
@@ -52,22 +52,7 @@ app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/booking", bookingRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build"));
-});
-
-app.all("*", (req, res, next) => {
-  // const err = new Error(
-  //     `The route ${req.originalUrl} could not be found on this server!`
-  // );
-  // err.statusCode = 404;
-  // err.status = 'Failed';
-
-  next(
-    new AppError(
-      `The route ${req.originalUrl} could not be found on this server!`,
-      404
-    )
-  );
+  res.sendFile(path.join(__dirname + "./client/build/index.html"));
 });
 
 app.use(globalErrorHandler);
