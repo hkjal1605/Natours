@@ -44,7 +44,7 @@ app.use(xss());
 app.use(compression());
 
 // Serving static files
-app.use(express.static(path.join(__dirname, "./client/public")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
