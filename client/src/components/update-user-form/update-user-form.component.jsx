@@ -55,6 +55,7 @@ class UpdateUserData extends React.Component {
       setCurrentUser(updatedUser.data.data.user);
       console.log(updatedUser.data);
     } catch (err) {
+      console.log(err.response.data);
       this.setState({
         email: this.props.currentUser.email,
         name: this.props.currentUser.name,
@@ -66,8 +67,6 @@ class UpdateUserData extends React.Component {
         timerProgressBar: false,
       });
     }
-
-    console.log(formData);
   };
 
   render() {
