@@ -52,7 +52,7 @@ app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/booking", bookingRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/client/build"));
 });
 
 app.all("*", (req, res, next) => {
