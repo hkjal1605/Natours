@@ -50,11 +50,7 @@ app.use("/api/v1/booking", bookingRouter);
 
 // Serving static files
 if (process.env.NODE_ENV === "production") {
-  app.use(
-    express.static(
-      path.join("https://natours-express-react.herokuapp.com/", "client/build")
-    )
-  );
+  app.use(express.static(path.join(__dirname, "client/build")));
 
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
