@@ -128,14 +128,14 @@
 }
 
 .btn_details {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   letter-spacing: 0.8px;
-  background-color: #55c57a;
-  color: #fff;
-  box-shadow: none;
+  background-color: #55c57a !important;
+  color: #fff !important;
+  box-shadow: none !important;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5) !important;
   }
 }
