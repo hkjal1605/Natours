@@ -10,14 +10,9 @@ import { selectIsTourListFetching } from "../../redux/tours/tours.selector";
 
 import WithSpinner from "../../components/withSpinner/withSpinner.component";
 import { createStructuredSelector } from "reselect";
-import Spinner from "../../components/spinner/spinner.component";
 
-const AllTours = lazy(() =>
-  import("../../components/all-tours/all-tours.component")
-);
-const IndividualTourPage = lazy(() =>
-  import("../individual-tour-page/individual-tour-page.components")
-);
+import AllTours from "../../components/all-tours/all-tours.component";
+import IndividualTourPage from "../individual-tour-page/individual-tour-page.components";
 
 const AllToursWithSpinner = WithSpinner(AllTours);
 
@@ -29,22 +24,18 @@ class ToursPage extends React.Component {
   render() {
     const { match, isToursListLoading } = this.props;
     return (
-      <Suspense fallback={<Spinner />}>
-        <div className="tours-page">
-          <Route
-            exact
-            path={`${match.path}/`}
-            render={() => (
-              <AllToursWithSpinner isLoading={isToursListLoading} />
-            )}
-          />
-          <Route
-            exact
-            path={`${match.path}/:tourId`}
-            component={IndividualTourPage}
-          />
-        </div>
-      </Suspense>
+      <div className="tours-page">
+        <Route
+          exact
+          path={`${match.path}/`}
+          render={() => <AllToursWithSpinner isLoading={isToursListLoading} />}
+        />
+        <Route
+          exact
+          path={`${match.path}/:tourId`}
+          component={IndividualTourPage}
+        />
+      </div>
     );
   }
 }
