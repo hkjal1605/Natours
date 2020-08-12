@@ -95,7 +95,7 @@ class UpdateUserData extends React.Component {
 
           <div className="account-details__photo-container">
             <img
-              src={`https://natours-tourbook.herokuapp.com/img/users/${currentUser.photo}`}
+              src={`/img/users/${currentUser.photo}`}
               className="account-details__photo-container--photo"
             />
 

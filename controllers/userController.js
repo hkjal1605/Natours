@@ -4,6 +4,7 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const factory = require("./handleFactory");
 const sharp = require("sharp");
+const fs = require("fs");
 
 // const multerStorage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -41,7 +42,15 @@ exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
     .resize(500, 500)
     .toFormat("jpeg")
     .jpeg({ quality: 90 })
-    .toFile(`../../client/public/img/users/${req.file.filename}`);
+    .toFile(`public/${req.file.filename}`);
+
+  await fs.rename(
+    `public/${req.file.filename}`,
+    `client/build/img/users/${req.file.filename}`,
+    function (err) {
+      console.log(err);
+    }
+  );
 
   next();
 });
