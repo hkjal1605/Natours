@@ -44,17 +44,18 @@ app.use(xss());
 app.use(compression());
 
 // Serving static files
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/booking", bookingRouter);
-
-app.get("/*", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
 
 app.use(globalErrorHandler);
 
