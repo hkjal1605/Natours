@@ -19,7 +19,7 @@ import { ReactComponent as Star } from "../../icons/star.svg";
 
 import SectionMap from "../../components/section-map/section-map.component";
 import ErrorDisplay from "../../components/404-error/404-error.component";
-import BookinButton from "../../components/booking-button/booking-button.component";
+import BookingButton from "../../components/booking-button/booking-button.component";
 
 const TourPreview = ({ tour, error }) => {
   const star = [1, 2, 3, 4, 5];
@@ -165,7 +165,7 @@ const TourPreview = ({ tour, error }) => {
             </div>
           </div>
           <div className="tour-preview__booking">
-            <BookinButton tour={tour} />
+            <BookingButton tour={tour} />
           </div>
         </div>
       ) : null}
