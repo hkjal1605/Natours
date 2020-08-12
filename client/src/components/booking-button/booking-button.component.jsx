@@ -32,7 +32,7 @@ class BookingButton extends React.Component {
     return (
       <div className="booking-section">
         <img
-          src="https://natours-tourbook.herokuapp.com/img/logo-green-round.png"
+          src="/img/logo-green-round.png"
           className="booking-section__logo"
         />
         <div className="booking-section__content">
