@@ -51,7 +51,8 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/booking", bookingRouter);
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
+  console.log(__dirname);
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
