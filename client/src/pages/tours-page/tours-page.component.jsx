@@ -29,8 +29,8 @@ class ToursPage extends React.Component {
   render() {
     const { match, isToursListLoading } = this.props;
     return (
-      <div className="tours-page">
-        <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner />}>
+        <div className="tours-page">
           <Route
             exact
             path={`${match.path}/`}
@@ -43,8 +43,8 @@ class ToursPage extends React.Component {
             path={`${match.path}/:tourId`}
             component={IndividualTourPage}
           />
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     );
   }
 }
