@@ -8,8 +8,8 @@ const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const cors = require("cors");
 const path = require("path");
+const enforce = require("express-sslify");
 
-const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 
 const tourRouter = require("./routes/toursRouter");
@@ -23,6 +23,8 @@ app.use(cors());
 app.options("*", cors());
 
 app.use(helmet());
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -42,6 +44,10 @@ app.use(express.json());
 app.use(mongoSanitize());
 app.use(xss());
 app.use(compression());
+
+app.get("/service-worker.js", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "service-worker.js"));
+});
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
