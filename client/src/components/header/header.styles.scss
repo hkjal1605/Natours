@@ -12,6 +12,16 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
+  @media only screen and (max-width: 50em) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 86vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 86vh, 0 100%);
+  }
+
   &__text-box {
     position: absolute;
     top: 40%;
@@ -37,6 +47,18 @@
   font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 2rem;
+
+  @media only screen and (max-width: 37.5em) {
+    letter-spacing: 2rem;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    letter-spacing: 0.8rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    font-size: 5rem;
+  }
 }
 
 .heading-primary-sub {
@@ -44,4 +66,15 @@
   letter-spacing: 1.75rem;
   font-weight: 700;
   text-transform: uppercase;
+  @media only screen and (max-width: 37.5em) {
+    letter-spacing: 0.75rem;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    letter-spacing: 0.4rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    font-size: 1.8rem;
+  }
 }

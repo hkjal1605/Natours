@@ -8,6 +8,14 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media only screen and (max-width: 43.75em) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    width: 96%;
+  }
 }
 
 .login__heading {

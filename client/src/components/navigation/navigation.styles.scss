@@ -25,12 +25,27 @@
     }
   }
 
+  &__all-tours {
+    @media only screen and (max-width: 28.125em) {
+      display: none;
+    }
+  }
+
   &__logo {
     height: 4rem;
     position: absolute;
     top: 4rem;
     left: 50%;
     transform: translateX(-50%);
+
+    @media only screen and (max-width: 56.25em) {
+      top: 2rem;
+    }
+
+    @media only screen and (max-width: 28.125em) {
+      left: 3rem;
+      transform: none;
+    }
   }
 
   &__user {

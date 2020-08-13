@@ -18,6 +18,14 @@
     border-top: 3px solid #f7f7f7;
     text-align: center;
 
+    @media only screen and (max-width: 37.5em) {
+      width: 85%;
+    }
+
+    @media only screen and (max-width: 34.375em) {
+      width: 95%;
+    }
+
     &--text {
       font-family: "Lato", sans-serif;
       font-size: 1.8rem;

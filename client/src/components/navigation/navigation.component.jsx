@@ -13,7 +13,7 @@ const Navigation = ({ currentUser, logoutUser }) => {
   return (
     <div className="navigation">
       <Link className="link" to="/all-tours">
-        <h4 className="navigation__text">ALL TOURS</h4>
+        <h4 className="navigation__text navigation__all-tours">ALL TOURS</h4>
       </Link>
       <Link className="link" to="/">
         <img

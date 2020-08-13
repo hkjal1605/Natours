@@ -8,9 +8,17 @@
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: 62.5em) {
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
   padding: 2rem;
+
+  @media only screen and (max-width: 56.25em) {
+    padding: 0;
+  }
 }

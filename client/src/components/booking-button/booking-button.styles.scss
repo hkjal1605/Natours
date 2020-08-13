@@ -11,6 +11,14 @@
   justify-content: space-around;
   align-items: center;
 
+  @media only screen and (max-width: 43.75rem) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 34.375rem) {
+    flex-direction: column;
+  }
+
   &__logo {
     height: 16rem;
     width: 16rem;
@@ -38,6 +46,10 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+
+      @media only screen and (max-width: 56.25rem) {
+        font-size: 2.4rem;
+      }
     }
 
     &--text {
@@ -53,5 +65,10 @@
     color: #eee;
     background-color: #55c57a;
     text-transform: uppercase;
+
+    @media only screen and (max-width: 34.375rem) {
+      margin-right: 0;
+      margin-left: 5rem;
+    }
   }
 }
