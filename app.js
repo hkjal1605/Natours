@@ -46,6 +46,7 @@ app.use(xss());
 app.use(compression());
 
 app.get("/service-worker.js", (req, res) => {
+  console.log(__dirname);
   res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
 });
 
