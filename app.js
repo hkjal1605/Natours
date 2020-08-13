@@ -46,8 +46,7 @@ app.use(xss());
 app.use(compression());
 
 app.get("/service-worker.js", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
+  res.sendFile(path.join(__dirname, "client/build/service-worker.js"));
 });
 
 app.use("/api/v1/tours", tourRouter);
