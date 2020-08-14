@@ -3,6 +3,10 @@
   display: flex;
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.3);
 
+  @media only screen and (max-width: 43.75em) {
+    width: 100vw;
+  }
+
   &__sidebar {
     flex: 1;
     background-image: linear-gradient(to right bottom, #7ed56f, #28b485);

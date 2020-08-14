@@ -24,8 +24,6 @@ app.options("*", cors());
 
 app.use(helmet());
 
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
@@ -56,6 +54,7 @@ app.use("/api/v1/booking", bookingRouter);
 
 // Serving static files
 if (process.env.NODE_ENV === "production") {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
   app.use(express.static(path.join(__dirname, "client/build")));
 
   app.get("*", function (req, res) {
