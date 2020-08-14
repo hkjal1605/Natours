@@ -11,6 +11,7 @@ const bookingReducer = (state = INITIAL_STATE, action) => {
         ...state,
         session: action.payload,
       };
+
     default:
       return state;
   }

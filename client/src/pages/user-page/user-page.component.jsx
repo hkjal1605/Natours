@@ -3,16 +3,32 @@ import React from "react";
 import "./user-page.styles.scss";
 
 import { connect } from "react-redux";
+import { Route } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
-import { selectCurrentUser } from "../../redux/user/user.selector";
+import {
+  selectCurrentUser,
+  selectIsBookingsFetching,
+} from "../../redux/user/user.selector";
 
 import UserPreview from "../../components/user-preview/user-preview.component";
+import UserBookings from "../../components/user-bookings/user-bookings.component";
 
-const UserPage = ({ currentUser }) => {
+import WithSpinner from "../../components/withSpinner/withSpinner.component";
+
+const UserBookingsWithSpinner = WithSpinner(UserBookings);
+
+const UserPage = ({ currentUser, selectIsBookingsFetching, match }) => {
   if (currentUser) {
     return (
       <div className="user-page">
-        <UserPreview />
+        <Route exact path={`${match.path}/`} render={() => <UserPreview />} />
+        <Route
+          exact
+          path={`${match.path}/bookings`}
+          render={() => (
+            <UserBookingsWithSpinner isLoading={selectIsBookingsFetching} />
+          )}
+        />
       </div>
     );
   } else {
@@ -29,6 +45,7 @@ const UserPage = ({ currentUser }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  isBookingsLoading: selectIsBookingsFetching,
 });
 
 export default connect(mapStateToProps)(UserPage);

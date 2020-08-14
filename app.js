@@ -55,6 +55,8 @@ app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/service-worker.js"));
 });
 
+app.use(express.static(path.join(__dirname, "client/public")));
+
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
