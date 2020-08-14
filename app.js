@@ -12,6 +12,8 @@ const enforce = require("express-sslify");
 
 const globalErrorHandler = require("./controllers/errorController");
 
+const bookingController = require("./controllers/bookingController");
+
 const tourRouter = require("./routes/toursRouter");
 const userRouter = require("./routes/userRouter");
 const reviewRouter = require("./routes/reviewRouter");
@@ -36,6 +38,12 @@ const limiter = rateLimit({
 app.use("/api", limiter);
 
 app.use(cookieParser());
+
+app.post(
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  bookingController.webhookCheckout
+);
 
 app.use(express.json());
 

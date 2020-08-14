@@ -13,7 +13,9 @@ export const getCheckoutSession = (session) => ({
 export const getCheckoutSessionStartAsync = (tourId) => {
   return async (dispatch) => {
     try {
-      const session = await axios.get(`/api/v1/booking/${tourId}`);
+      const session = await axios.get(
+        `/api/v1/booking/checkout-session/${tourId}`
+      );
       dispatch(getCheckoutSession(session));
 
       await stripe.redirectToCheckout({
