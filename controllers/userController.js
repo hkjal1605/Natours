@@ -85,17 +85,6 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getMyBookings = catchAsync(async (req, res, next) => {
-  const bookings = await Booking.find({ user: req.user.id });
-
-  res.status(200).json({
-    status: "success",
-    data: {
-      bookings,
-    },
-  });
-});
-
 exports.deleteMe = catchAsync(async (req, res, next) => {
   await User.findByIdAndUpdate(req.user.id, {
     active: false,
@@ -117,10 +106,3 @@ exports.deleteUser = factory.deleteOne(User);
 exports.getUser = factory.getOne(User);
 exports.createUser = factory.createOne(User);
 exports.updateUser = factory.updateOne(User);
-
-exports.deleteUser = (req, res) => {
-  res.status(500).json({
-    status: "error",
-    message: "This route is not defined yet!",
-  });
-};

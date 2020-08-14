@@ -65,3 +65,14 @@ exports.getBooking = factory.getOne(Booking);
 exports.getAllBookings = factory.getAll(Booking);
 exports.updateBooking = factory.updateOne(Booking);
 exports.deleteBooking = factory.deleteOne(Booking);
+
+exports.getUserBookings = catchAsync(async (req, res, next) => {
+  const bookings = await Booking.find({ user: req.user._id });
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      bookings,
+    },
+  });
+});
