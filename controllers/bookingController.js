@@ -3,7 +3,7 @@ const AppError = require("../utils/appError");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Tour = require("../models/tourModels");
 const User = require("../models/userModels");
-const factory = require("./handlerFactory");
+const factory = require("./handleFactory");
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const tour = await Tour.findById(req.params.tourId);
