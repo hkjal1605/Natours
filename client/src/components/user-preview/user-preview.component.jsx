@@ -3,6 +3,7 @@ import React from "react";
 import "./user-preview.styles.scss";
 
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { getUserBookingsStartAsync } from "../../redux/user/user.actions";
 
@@ -31,10 +32,10 @@ class UserPreview extends React.Component {
               </a>
             </li>
             <li className="side-nav__item">
-              <a href="/profile/bookings" className="side-nav__link">
+              <Link to="/profile/bookings" className="side-nav__link link">
                 <Booking className="side-nav__icon" />
                 <span className="side-nav__text">My Bookings</span>
-              </a>
+              </Link>
             </li>
             <li className="side-nav__item">
               <a href="#" className="side-nav__link">
