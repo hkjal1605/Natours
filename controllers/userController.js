@@ -86,11 +86,13 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyBookings = catchAsync(async (req, res, next) => {
-  const bookings = (await Booking.find({ user: req.user.id })).tour;
+  const bookings = await Booking.find({ user: req.user.id });
 
   res.status(200).json({
     status: "success",
-    data: bookings,
+    data: {
+      bookings,
+    },
   });
 });
 
