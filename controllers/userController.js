@@ -1,5 +1,6 @@
 const multer = require("multer");
 const User = require("../models/userModels");
+const Booking = require("../models/bookingModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const factory = require("./handleFactory");
@@ -81,6 +82,15 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     data: {
       user: updatedUser,
     },
+  });
+});
+
+exports.getMyBookings = catchAsync(async (req, res, next) => {
+  const bookings = (await Booking.find({ user: req.user.id })).tour;
+
+  res.status(200).json({
+    status: "success",
+    data: bookings,
   });
 });
 
